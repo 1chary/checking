@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from "react";
+import ReactPlayer from "react-player";
+import { BsBackspace } from "react-icons/bs";
+import Popup from "reactjs-popup";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = { updatedList: [] };
+
+  required = () => <p className="para"> Enter the valid github username</p>;
+
+  render() {
+    return (
+      <div>
+        <input type="search" onBlur={this.required} />
+        <img src="https://res.cloudinary.com/dowjvitxs/image/upload/v1709190564/Frame_8830_gsn0a3.png" />
+      </div>
+    );
+  }
 }
 
 export default App;
