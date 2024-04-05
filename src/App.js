@@ -7,6 +7,19 @@ import "./App.css";
 class App extends Component {
   state = { updatedList: [] };
 
+  componentDidMount() {
+    this.checkApi();
+  }
+
+  checkApi = async () => {
+    const url = "http://localhost:3000/books/1/";
+    const response = await fetch(url);
+    if (response.ok === true) {
+      const data = await response.json();
+      console.log(data);
+    }
+  };
+
   required = () => <p className="para"> Enter the valid github username</p>;
 
   render() {
